@@ -1,7 +1,29 @@
-
 import { Users, Globe, Heart, Coffee } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const About = () => {
+  const galleryImages = [
+    "/lovable-uploads/392e4cb8-d849-4953-a56c-ff857379833b.png",
+    "/lovable-uploads/acb15df7-9b07-49d9-8279-7ed505d4c4d9.png", 
+    "/lovable-uploads/84ceeffa-fd3d-4c9a-b1a4-8aae4cc4447f.png",
+    "/lovable-uploads/b061b9ca-144a-42a6-a82f-11ae89a8ce02.png",
+    "/lovable-uploads/d4dd34b5-4bb0-4fa7-b916-a5e4607b87b6.png",
+    "/lovable-uploads/57ea44b6-c3ea-4845-ab3f-e4cfc7ca370d.png",
+    "/lovable-uploads/6c7f22af-2dba-4803-b4ab-874bb516a986.png"
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === galleryImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [galleryImages.length]);
+
   return (
     <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,11 +103,17 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=600&h=400" 
-                alt="Hostel Interior" 
-                className="rounded-xl shadow-lg w-full h-80 object-cover"
-              />
+              <div className="relative overflow-hidden rounded-xl shadow-lg">
+                <img 
+                  src={galleryImages[currentImageIndex]}
+                  alt="Hostel Gallery" 
+                  className="w-full h-80 object-cover transition-opacity duration-500"
+                  key={currentImageIndex}
+                />
+                <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
+                  {currentImageIndex + 1} / {galleryImages.length}
+                </div>
+              </div>
               <div className="absolute -bottom-6 -right-6 bg-teal-600 text-white p-4 rounded-xl shadow-lg">
                 <p className="font-semibold">50+ Reviews</p>
                 <p className="text-sm opacity-90">Excellent Rating</p>
