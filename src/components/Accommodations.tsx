@@ -8,21 +8,21 @@ const Accommodations = () => {
       price: "60 BOB",
       description: "Budget-friendly shared accommodation with lockers and shared bathrooms",
       features: ["4-8 beds per room", "Individual lockers", "Shared bathroom", "Common area access"],
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=600&h=400"
+      image: "/lovable-uploads/771c34e8-4fe6-4b42-9ac4-de4059e39ad7.png"
     },
     {
       title: "Private Room",
       price: "150 BOB", 
       description: "Comfortable private room perfect for couples or solo travelers seeking privacy",
       features: ["Double or twin beds", "Private bathroom", "City views", "24/7 hot water"],
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=600&h=400"
+      image: "/lovable-uploads/3e287e67-8ac8-4817-a86b-399c6bd9d32d.png"
     },
     {
       title: "Family Room",
       price: "250 BOB",
       description: "Spacious room ideal for families or groups traveling together",
       features: ["3-4 beds", "Private bathroom", "Extra space", "Mountain views"],
-      image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&w=600&h=400"
+      image: "/lovable-uploads/8e0f4c83-b3b1-4983-999c-45bab113109c.png"
     }
   ];
 
