@@ -1,221 +1,110 @@
-
 import { Phone, Mail, MessageCircle, Clock, MapPin } from "lucide-react";
-import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    checkIn: '',
-    checkOut: '',
-    guests: '1',
-    message: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Booking inquiry submitted:', formData);
-    // Here you would typically send the data to a backend
-    alert('Thank you for your inquiry! We will contact you soon.');
-  };
+  const { t } = useLanguage();
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-teal-100 to-transparent rounded-full transform -translate-x-40 -translate-y-40"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Contact & Booking</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to join our family? Get in touch with us to book your stay or ask any questions
+          <div className="inline-block">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 relative">
+              {t('contact.title')}
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full"></div>
+            </h2>
+          </div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            {t('contact.description')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-4xl mx-auto">
           {/* Contact Information */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Get In Touch</h3>
+          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden border border-gray-100">
+            {/* Card decorative elements */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-teal-50 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-orange-50 to-transparent rounded-full transform -translate-x-12 translate-y-12"></div>
             
-            <div className="space-y-6 mb-8">
-              <div className="flex items-center space-x-4">
-                <div className="bg-teal-100 p-3 rounded-full">
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center relative">
+              {t('contact.getInTouch')}
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full"></div>
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="group flex items-center space-x-4 hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-br from-teal-100 to-teal-200 p-3 rounded-full group-hover:shadow-lg transition-all duration-300">
                   <Phone className="text-teal-600" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Phone</h4>
+                  <h4 className="font-semibold text-gray-900">{t('contact.phone')}</h4>
                   <p className="text-gray-600">+591 2 2451234</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="bg-green-100 p-3 rounded-full">
+              <div className="group flex items-center space-x-4 hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-br from-green-100 to-green-200 p-3 rounded-full group-hover:shadow-lg transition-all duration-300">
                   <MessageCircle className="text-green-600" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">WhatsApp</h4>
-                  <p className="text-gray-600">+591 75512345</p>
+                  <h4 className="font-semibold text-gray-900">{t('contact.whatsapp')}</h4>
+                  <p className="text-gray-600">+591 78763629</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="bg-blue-100 p-3 rounded-full">
+              <div className="group flex items-center space-x-4 hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-3 rounded-full group-hover:shadow-lg transition-all duration-300">
                   <Mail className="text-blue-600" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Email</h4>
+                  <h4 className="font-semibold text-gray-900">{t('contact.email')}</h4>
                   <p className="text-gray-600">info@canoahostal.com</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="bg-orange-100 p-3 rounded-full">
+              <div className="group flex items-center space-x-4 hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-br from-orange-100 to-orange-200 p-3 rounded-full group-hover:shadow-lg transition-all duration-300">
                   <MapPin className="text-orange-600" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Address</h4>
-                  <p className="text-gray-600">Calle Linares, La Paz, Bolivia</p>
+                  <h4 className="font-semibold text-gray-900">{t('contact.address')}</h4>
+                  <p className="text-gray-600">Hostal canoa, Av. Illampu esquina, La Paz</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="bg-purple-100 p-3 rounded-full">
+              <div className="group flex items-center space-x-4 hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-br from-purple-100 to-purple-200 p-3 rounded-full group-hover:shadow-lg transition-all duration-300">
                   <Clock className="text-purple-600" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Reception Hours</h4>
-                  <p className="text-gray-600">24/7 Available</p>
+                  <h4 className="font-semibold text-gray-900">{t('contact.hours')}</h4>
+                  <p className="text-gray-600">{t('contact.hours.desc')}</p>
+                </div>
+              </div>
+
+              <div className="group flex items-center space-x-4 hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-3 rounded-full group-hover:shadow-lg transition-all duration-300">
+                  <MessageCircle className="text-indigo-600" size={24} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">{t('contact.social')}</h4>
+                  <p className="text-gray-600">@canoahostal</p>
                 </div>
               </div>
             </div>
-
-            <div className="bg-teal-50 rounded-xl p-6">
-              <h4 className="font-semibold text-gray-900 mb-3">Quick Response Guarantee</h4>
-              <p className="text-gray-600 text-sm">
-                We respond to all inquiries within 2 hours during business hours. 
-                For urgent matters, please call or WhatsApp us directly.
+            
+            <div className="mt-8 bg-gradient-to-r from-teal-50 to-teal-100 rounded-2xl p-6 text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-teal-200/30 rounded-full transform translate-x-10 -translate-y-10"></div>
+              <h4 className="font-semibold text-gray-900 mb-3">{t('contact.guarantee')}</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {t('contact.guarantee.desc')}
               </p>
             </div>
-          </div>
-
-          {/* Booking Form */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Book Your Stay</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                    placeholder="Your full name"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="checkIn" className="block text-sm font-medium text-gray-700 mb-2">
-                    Check-in Date
-                  </label>
-                  <input
-                    type="date"
-                    id="checkIn"
-                    name="checkIn"
-                    value={formData.checkIn}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="checkOut" className="block text-sm font-medium text-gray-700 mb-2">
-                    Check-out Date
-                  </label>
-                  <input
-                    type="date"
-                    id="checkOut"
-                    name="checkOut"
-                    value={formData.checkOut}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="guests" className="block text-sm font-medium text-gray-700 mb-2">
-                  Number of Guests
-                </label>
-                <select
-                  id="guests"
-                  name="guests"
-                  value={formData.guests}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                >
-                  <option value="1">1 Guest</option>
-                  <option value="2">2 Guests</option>
-                  <option value="3">3 Guests</option>
-                  <option value="4">4 Guests</option>
-                  <option value="5">5+ Guests</option>
-                </select>
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Special Requests or Questions
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                  placeholder="Any special requests, questions, or additional information..."
-                ></textarea>
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-300"
-              >
-                Send Booking Inquiry
-              </button>
-            </form>
-            
-            <p className="text-sm text-gray-500 mt-4">
-              * This is an inquiry form. Final booking confirmation will be sent via email.
-            </p>
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
 import { Users, Globe, Heart, Coffee } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
   const galleryImages = [
     "/lovable-uploads/392e4cb8-d849-4953-a56c-ff857379833b.png",
     "/lovable-uploads/acb15df7-9b07-49d9-8279-7ed505d4c4d9.png", 
@@ -25,80 +27,88 @@ const About = () => {
   }, [galleryImages.length]);
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-teal-100 to-transparent"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Welcome to Our Family</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            At Canoa Hostal, we believe every traveler becomes part of our global family. 
-            Experience authentic Bolivian hospitality with stunning panoramic views of La Paz.
+          <div className="inline-block">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 relative">
+              {t('about.title')}
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full"></div>
+            </h2>
+          </div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            {t('about.description')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <div className="text-center group">
-            <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-teal-200 transition-colors">
+          <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+            <div className="bg-gradient-to-br from-teal-100 to-teal-200 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-teal-200 group-hover:to-teal-300 transition-all duration-300 shadow-lg group-hover:shadow-xl">
               <Users className="text-teal-600" size={28} />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Community Spirit</h3>
-            <p className="text-gray-600">Join our international family of travelers and make lifelong connections.</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('about.community.title')}</h3>
+            <p className="text-gray-600">{t('about.community.desc')}</p>
           </div>
 
-          <div className="text-center group">
-            <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
+          <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+            <div className="bg-gradient-to-br from-orange-100 to-orange-200 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-orange-200 group-hover:to-orange-300 transition-all duration-300 shadow-lg group-hover:shadow-xl">
               <Globe className="text-orange-600" size={28} />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Cultural Exchange</h3>
-            <p className="text-gray-600">Experience authentic Bolivian culture while sharing your own stories.</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('about.culture.title')}</h3>
+            <p className="text-gray-600">{t('about.culture.desc')}</p>
           </div>
 
-          <div className="text-center group">
-            <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-pink-200 transition-colors">
+          <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+            <div className="bg-gradient-to-br from-pink-100 to-pink-200 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-pink-200 group-hover:to-pink-300 transition-all duration-300 shadow-lg group-hover:shadow-xl">
               <Heart className="text-pink-600" size={28} />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Warm Hospitality</h3>
-            <p className="text-gray-600">Feel at home with our friendly staff and welcoming atmosphere.</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('about.hospitality.title')}</h3>
+            <p className="text-gray-600">{t('about.hospitality.desc')}</p>
           </div>
 
-          <div className="text-center group">
-            <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-200 transition-colors">
+          <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+            <div className="bg-gradient-to-br from-amber-100 to-amber-200 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-amber-200 group-hover:to-amber-300 transition-all duration-300 shadow-lg group-hover:shadow-xl">
               <Coffee className="text-amber-600" size={28} />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Comfort & Relaxation</h3>
-            <p className="text-gray-600">Unwind in our cozy spaces with breathtaking city views.</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('about.comfort.title')}</h3>
+            <p className="text-gray-600">{t('about.comfort.desc')}</p>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
+          {/* Card Background Pattern */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-teal-50 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Your Home Away From Home</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">{t('about.homeTitle')}</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Located in the heart of La Paz, Canoa Hostal offers more than just accommodation. 
-                We provide a complete cultural experience with our rooftop terrace offering 360-degree 
-                views of the city and surrounding mountains.
+                {t('about.homeDesc1')}
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Our restaurant serves delicious local and international cuisine, while our bar 
-                is the perfect place to meet fellow travelers and share stories of your adventures 
-                across Bolivia and beyond.
+                {t('about.homeDesc2')}
               </p>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-teal-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">24/7 Reception & Security</span>
+                  <span className="text-gray-700">{t('about.feature1')}</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-teal-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Free WiFi Throughout</span>
+                  <span className="text-gray-700">{t('about.feature2')}</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-teal-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Panoramic City Views</span>
+                  <span className="text-gray-700">{t('about.feature3')}</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-teal-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Restaurant & Bar On-Site</span>
+                  <span className="text-gray-700">{t('about.feature4')}</span>
                 </div>
               </div>
             </div>
@@ -107,7 +117,7 @@ const About = () => {
                 <img 
                   src={galleryImages[currentImageIndex]}
                   alt="Hostel Gallery" 
-                  className="w-full h-80 object-cover transition-opacity duration-500"
+                  className="w-full h-96 md:h-[500px] object-cover transition-opacity duration-500"
                   key={currentImageIndex}
                 />
                 <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">
@@ -115,8 +125,8 @@ const About = () => {
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-teal-600 text-white p-4 rounded-xl shadow-lg">
-                <p className="font-semibold">50+ Reviews</p>
-                <p className="text-sm opacity-90">Excellent Rating</p>
+                <p className="font-semibold">{t('about.reviews')}</p>
+                <p className="text-sm opacity-90">{t('about.rating')}</p>
               </div>
             </div>
           </div>
