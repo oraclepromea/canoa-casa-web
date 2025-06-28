@@ -97,7 +97,14 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('footer.contactInfo')}</h4>
             <div className="space-y-2 text-gray-300">
-              <p>Hostal canoa, Av. Illampu esquina, La Paz</p>
+              <a 
+                href="https://www.google.com/maps/place/Hostel+Canoa/@-16.4965609,-68.1395597,17z/data=!3m1!4b1!4m9!3m8!1s0x915f207431abb671:0x82632d8828906ca0!5m2!4m1!1i2!8m2!3d-16.4965609!4d-68.1395597!16s%2Fg%2F11f15dvjpk?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-teal-400 transition-colors cursor-pointer"
+              >
+                Hostal canoa, Av. Illampu esquina, La Paz
+              </a>
               <p>+591 2 2451234</p>
               <p>+591 78763629</p>
               <p>info@canoahostal.com</p>

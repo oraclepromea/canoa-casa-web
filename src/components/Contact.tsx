@@ -73,7 +73,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">{t('contact.address')}</h4>
-                  <p className="text-gray-600">Hostal canoa, Av. Illampu esquina, La Paz</p>
+                  <a 
+                    href="https://www.google.com/maps/place/Hostel+Canoa/@-16.4965609,-68.1395597,17z/data=!3m1!4b1!4m9!3m8!1s0x915f207431abb671:0x82632d8828906ca0!5m2!4m1!1i2!8m2!3d-16.4965609!4d-68.1395597!16s%2Fg%2F11f15dvjpk?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-orange-600 transition-colors cursor-pointer"
+                  >
+                    Hostal canoa, Av. Illampu esquina, La Paz
+                  </a>
                 </div>
               </div>
               

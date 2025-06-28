@@ -96,7 +96,7 @@ const translations: Translations = {
   'location.getting.desc2': { en: 'Walking distance to main attractions', es: 'A distancia caminable de las principales atracciones' },
   'location.reception': { en: 'Reception Hours', es: 'Horarios de Recepción' },
   'location.reception.desc1': { en: '24/7 Reception Available', es: 'Recepción Disponible 24/7' },
-  'location.reception.desc2': { en: 'Check-in: 2:00 PM | Check-out: 11:00 AM', es: 'Check-in: 2:00 PM | Check-out: 11:00 AM' },
+  'location.reception.desc2': { en: 'Check-in: 12:00 PM | Check-out: 11:00 AM', es: 'Check-in: 12:00 PM | Check-out: 11:00 AM' },
   'location.contact': { en: 'Contact', es: 'Contacto' },
   'location.attractions': { en: 'Nearby Attractions', es: 'Atracciones Cercanas' },
   'location.transport': { en: 'Transportation Options', es: 'Opciones de Transporte' },
