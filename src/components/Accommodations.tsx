@@ -6,25 +6,34 @@ const Accommodations = () => {
   
   const rooms = [
     {
-      titleKey: "accommodations.shared.title",
-      price: "60 BOB",
-      descKey: "accommodations.shared.desc",
-      features: ["4-8 beds per room", "Individual lockers", "Shared bathroom", "Common area access"],
-      image: "/lovable-uploads/8e0f4c83-b3b1-4983-999c-45bab113109c.png"
-    },
-    {
-      titleKey: "accommodations.private.title",
-      price: "150 BOB", 
-      descKey: "accommodations.private.desc",
-      features: ["Double or twin beds", "Private bathroom", "City views", "24/7 hot water"],
+      titleKey: "accommodations.double.private.title",
+      price: "120 BOB",
+      descKey: "accommodations.double.private.desc",
+      features: ["Double bed", "Private bathroom", "City views", "24/7 hot water"],
       image: "/lovable-uploads/3e287e67-8ac8-4817-a86b-399c6bd9d32d.png"
     },
     {
-      titleKey: "accommodations.family.title",
-      price: "250 BOB",
-      descKey: "accommodations.family.desc",
-      features: ["3-4 beds", "Private bathroom", "Extra space", "Mountain views"],
+      titleKey: "accommodations.double.shared.title",
+      price: "100 BOB", 
+      descKey: "accommodations.double.shared.desc",
+      features: ["Double bed", "Shared bathroom", "City views", "Common area access"],
       image: "/lovable-uploads/771c34e8-4fe6-4b42-9ac4-de4059e39ad7.png"
+    },
+    {
+      titleKey: "accommodations.dorm4.private.title",
+      price: "55 BOB",
+      priceNote: "per person",
+      descKey: "accommodations.dorm4.private.desc",
+      features: ["4-bed dormitory", "Private bathroom", "Individual lockers", "Personal reading light"],
+      image: "/lovable-uploads/8e0f4c83-b3b1-4983-999c-45bab113109c.png"
+    },
+    {
+      titleKey: "accommodations.dorm.shared.title",
+      price: "47 BOB",
+      priceNote: "per person",
+      descKey: "accommodations.dorm.shared.desc",
+      features: ["3-4 bed dormitory", "Shared bathroom", "Individual lockers", "Common area access"],
+      image: "/lovable-uploads/8e0f4c83-b3b1-4983-999c-45bab113109c.png"
     }
   ];
 
@@ -59,7 +68,12 @@ const Accommodations = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4 bg-gradient-to-r from-teal-600 to-teal-700 text-white px-4 py-2 rounded-full font-bold shadow-lg transform group-hover:scale-105 transition-transform duration-300">
-                  {room.price}{t('common.night')}
+                  <div className="text-center">
+                    <div>{room.price}{t('common.night')}</div>
+                    {room.priceNote && (
+                      <div className="text-xs font-normal opacity-90">{room.priceNote}</div>
+                    )}
+                  </div>
                 </div>
               </div>
               

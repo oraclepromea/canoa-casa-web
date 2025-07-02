@@ -110,24 +110,24 @@ const Location = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚗</span>
+              <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-4xl">🚗</span>
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('location.taxi')}</h4>
               <p className="text-gray-600 text-sm">{t('location.taxi.desc')}</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚌</span>
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-4xl">🚌</span>
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('location.public')}</h4>
               <p className="text-gray-600 text-sm">{t('location.public.desc')}</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚡</span>
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-4xl">🚡</span>
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('location.cable')}</h4>
               <p className="text-gray-600 text-sm">{t('location.cable.desc')}</p>
